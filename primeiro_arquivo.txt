@@ -1,0 +1,54 @@
+Eu aprendi que o Git que está ligada ao desenvolvimento do Linux,com o fim das empresa Bitkeeper,isso levou a pensar em uma nova comunidade, assim começaram então a desenvolver  um novo sistema, um software mais robusto, design simples  e capaz de lidar com grandes projetos.Assim nasceu o Git,este sistema tem se tornado um sistema de controlo de versão mundialmente conhecido e utilizado.
+O Git então é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software, mas que pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo. As principais funções dessa ferramenta são:
+
+Permite que os desenvolvedores trabalhem simultaneamente.
+Não permite substituir as alterações um do outro.
+Mantém um histórico de todas as versões.
+É um sistema de controle de versão descentralizado.
+
+Primeiros comandos 
+
+Clonando um repositório existente
+Caso você queira obter a cópia de um repositório Git existente – por exemplo, um projeto que você queira contribuir – o comando para isso é git clone.
+
+git clone url
+Exemplo:
+
+git clone https://github.com/ripienaar/free-for-dev
+
+Inicializando um repositório
+Para você começar a monitorar um projeto existente com Git, você deve ir para o diretório desse projeto e digitar o seguinte comando:
+
+cd /seu/diretorio/que/deseja/criargit init
+O comando da seção anterior irá criar um subdiretório .git contendo o esqueleto necessário para o funcionamento do repositório git. Nessa etapa ainda não existe nenhum arquivo registrado no repositório.
+
+Se você quer começar a controlar o versionamento dos arquivos existentes (ao contrário de um diretório vazio), você provavelmente deve começar a monitorar esses arquivos e fazer um commit inicial. Você pode fazer isso com alguns comandos git add que especificam os arquivos que você quer monitorar, seguido de um git commit:
+
+git add .git commit -m “mensagem commit inicial”
+Obs: O “ponto” no comando git add significa que você está adicionando todos os arquivos modificados ou criados no seu commit.
+
+Agora você possui um diretório .git com um commit de um arquivo que você deseja monitorar. Com isso, é recomendado que, a cada mudança significativa no arquivo, todo o processo de commit seja refeito para que as mudanças no arquivo sejam registradas no diretório .git.
+
+É importante lembrar que os arquivos presentes no diretório podem estar em dois estados distintos: monitorado ou não monitorado. Os arquivos monitorados são os arquivos presentes no último commit, podendo estar inalterados, modificados ou selecionados para um outro commit. Os arquivos não monitorados são os que não foram consolidados e também não estão presentes em nenhuma seleção pré commit.
+
+Para visualizar o status dos seus arquivos, é usado o comando:
+
+git status
+O comando status tem como saída o estado em que se encontra cada arquivo modificado e/ou criado.
+
+É possível observar as mudanças feitas em arquivos monitorados modificados através do comando:
+
+git diff
+Para verificar o histórico dos commits efetuados em determinado repositório, existe o comando:
+
+git log
+Esse comando mostra os commits efetuados de cima para baixo sendo o superior o mais recente. Um conjunto de informações do commit também são apresentadas como nome do autor, e-mail, data e a mensagem do commit.
+
+Enviando para o repositório remoto
+
+Quando o seu trabalho estiver pronto e você já tem interesse em enviar os arquivos modificados ao remoto do projeto, você pode usar o comando “push” para efetuar a tarefa. É possível enviar o arquivo para o remoto de origem ou para um remoto em específico como:
+
+git push origin branch
+Onde branch é o nome da branch que deseja enviar o arquivo. Nesse caso estamos enviando para a master, logo o comando será:
+
+git push origin master
